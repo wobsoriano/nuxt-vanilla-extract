@@ -1,8 +1,18 @@
 {
-  "name": "nuxt-progress",
+  "name": "nuxt-vanilla-extract",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.2.1",
+  "description": "Zero-runtime stylesheets in your Nuxt 3 apps.",
+  "keywords": [
+    "css",
+    "css-in-js",
+    "css-in-ts",
+    "vue",
+    "nuxt",
+    "vanilla",
+    "emotion"
+  ],
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "repository": {
