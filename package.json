@@ -1,7 +1,7 @@
 {
   "name": "nuxt-vanilla-extract",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.2.1",
   "description": "Zero-runtime stylesheets in your Nuxt 3 apps.",
   "keywords": [
