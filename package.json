@@ -1,0 +1,50 @@
+{
+  "name": "nuxt-progress",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.2.1",
+  "license": "MIT",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wobsoriano/nuxt-progress.git"
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "nr build",
+    "build": "nuxt-module-build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "release": "bumpp --commit --push --tag && npm publish"
+  },
+  "peerDependencies": {
+    "@vanilla-extract/vite-plugin": ">=3.2.1"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.3",
+    "@vanilla-extract/vite-plugin": "^3.2.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.23.1",
+    "@antfu/ni": "^0.16.2",
+    "@nuxt/module-builder": "latest",
+    "@vanilla-extract/integration": "^5.0.0",
+    "bumpp": "^7.1.1",
+    "eslint": "^8.14.0",
+    "nuxt": "^3.0.0-rc.3",
+    "pnpm": "^7.2.1"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
