@@ -41,7 +41,7 @@
     "@vanilla-extract/vite-plugin": ">=3.2.1"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.3",
+    "@nuxt/kit": "3.0.0-rc.4",
     "@vanilla-extract/integration": "^5.0.0",
     "@vanilla-extract/vite-plugin": "^3.2.1"
   },
