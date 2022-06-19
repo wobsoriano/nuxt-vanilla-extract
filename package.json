@@ -33,6 +33,7 @@
   "scripts": {
     "prepublishOnly": "nr build",
     "build": "nuxt-module-build",
+    "play": "nr build && nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp --commit --push --tag && npm publish",
