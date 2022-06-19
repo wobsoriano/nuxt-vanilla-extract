@@ -15,10 +15,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-vanilla-extract',
     configKey: 'vanilla',
   },
-  defaults: {
-    identifiers: undefined,
-    esbuildOptions: undefined,
-  },
+  defaults: {},
   setup(options, nuxt) {
     nuxt.options.build.transpile.push(/@vanilla-extract/, /@emotion/, 'outdent')
 
