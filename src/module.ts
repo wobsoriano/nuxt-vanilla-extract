@@ -23,10 +23,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(/@vanilla-extract/, /@emotion/, 'outdent')
 
     nuxt.hook('builder:watch', async (e, path) => {
-      if (e === 'change' && path.includes('.css.')) {
-        console.log(e, path)
-        await nuxt.callHook('builder:generateApp')
-      }
+      if (e === 'change' && path.includes('.css.'))
+        console.log('style updated, do something')
     })
 
     addVitePlugin(vanillaExtractPlugin({
