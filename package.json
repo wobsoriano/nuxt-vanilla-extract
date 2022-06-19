@@ -35,7 +35,8 @@
     "build": "nuxt-module-build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "bumpp --commit --push --tag && npm publish"
+    "release": "bumpp --commit --push --tag && npm publish",
+    "prepare": "nr build && nuxi prepare playground"
   },
   "peerDependencies": {
     "@vanilla-extract/vite-plugin": ">=3.2.1"
@@ -51,6 +52,7 @@
     "@nuxt/module-builder": "latest",
     "bumpp": "^7.1.1",
     "eslint": "^8.14.0",
+    "nuxt": "3.0.0-rc.4",
     "pnpm": "^7.2.1"
   },
   "eslintConfig": {
