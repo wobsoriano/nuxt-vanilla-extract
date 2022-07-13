@@ -13,7 +13,7 @@ importers:
       bumpp: ^7.1.1
       eslint: ^8.14.0
       nuxt: 3.0.0-rc.4
-      pnpm: ^7.2.1
+      pnpm: ^7.5.0
     dependencies:
       '@nuxt/kit': 3.0.0-rc.4
       '@vanilla-extract/integration': 5.0.0
@@ -25,7 +25,7 @@ importers:
       bumpp: 7.1.1
       eslint: 8.16.0
       nuxt: 3.0.0-rc.4
-      pnpm: 7.2.1
+      pnpm: 7.5.1
 
 packages:
 
@@ -5040,8 +5040,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.2.1:
-    resolution: {integrity: sha512-Z2Wg7YHxeit2U+0aSj+doBPF9+ER0e3VLOGuJOQbk8rzIxK6zMtrQ0ICieCUGPWRM0Vbwj8yIcTKzO22Yhs/Cg==}
+  /pnpm/7.5.1:
+    resolution: {integrity: sha512-/WbI4+V4QLJvMn4mp6dw4q+fbvwIyLTr7qmkoCpqs/xIYMpVXA3wdkvI5I9O9k1DJfYNuH8yY7Uf4vCCEdObJw==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
