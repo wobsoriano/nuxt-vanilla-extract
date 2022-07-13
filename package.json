@@ -43,7 +43,7 @@
     "@vanilla-extract/vite-plugin": ">=3.2.1"
   },
   "dependencies": {
-    "@nuxt/kit": "3.0.0-rc.4",
+    "@nuxt/kit": "3.0.0-rc.5",
     "@vanilla-extract/integration": "^5.0.0",
     "@vanilla-extract/vite-plugin": "^3.2.1"
   },
@@ -53,7 +53,7 @@
     "@nuxt/module-builder": "latest",
     "bumpp": "^7.1.1",
     "eslint": "^8.14.0",
-    "nuxt": "3.0.0-rc.4",
+    "nuxt": "3.0.0-rc.5",
     "pnpm": "^7.5.0"
   },
   "eslintConfig": {
