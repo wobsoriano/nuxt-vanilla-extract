@@ -16,4 +16,3 @@ export const exampleStyle = style({
   padding: 10,
 })
 
-export default {}
