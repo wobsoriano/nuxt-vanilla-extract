@@ -18,12 +18,12 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   setup(options, nuxt) {
-    // nuxt.options.vite.optimizeDeps.include.push('@emotion/hash')
     nuxt.hook('vite:extendConfig', (config) => {
       config.plugins = config.plugins || []
       config.plugins.push(vanillaExtractPlugin(options))
     })
 
+    // TODO: Remove this if @vanilla-extract/css updated their @emotion/hash version to 0.9.0
     if (process.env.NODE_ENV === 'production') {
       nuxt.options.alias['@emotion/hash'] = resolve('./node_modules/@emotion/hash/dist/emotion-hash.cjs.js')
     }

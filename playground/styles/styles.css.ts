@@ -15,3 +15,5 @@ export const exampleStyle = style({
   color: 'white',
   padding: 10,
 })
+
+export default {}
