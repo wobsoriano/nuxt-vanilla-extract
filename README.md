@@ -48,7 +48,7 @@ export default {}
 
 ```html
 <script setup lang="ts">
-import { themeClass, exampleStyle } from '~/styles.css.ts';
+import { themeClass, exampleStyle } from '@/styles.css';
 </script>
 
 <template>
