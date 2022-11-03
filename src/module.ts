@@ -11,6 +11,22 @@ interface ModuleOptions {
   esbuildOptions?: CompileOptions['esbuildOptions']
 }
 
+// Without this, build will fail
+function addDefaultExport() {
+  const isProduction = process.env.NODE_ENV === 'production'
+  return {
+    name: 'nuxt-vanilla-extract',
+    transform(src, id) {
+      if (isProduction && id.includes('.css.ts') && !src.includes('export default')) {
+        return {
+          code: `${src}\nexport default {}`,
+          map: null
+        }
+      }
+    }
+  }
+}
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-vanilla-extract',
@@ -20,7 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     nuxt.hook('vite:extendConfig', (config) => {
       config.plugins = config.plugins || []
-      config.plugins.push(vanillaExtractPlugin(options))
+      config.plugins.push(vanillaExtractPlugin(options), addDefaultExport())
     })
 
     // TODO: Remove this if @vanilla-extract/css updated their @emotion/hash version to 0.9.0
