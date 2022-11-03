@@ -1,4 +1,4 @@
-import { createTheme, style } from '@vanilla-extract/css'
+import { createTheme, style, globalStyle } from '@vanilla-extract/css'
 
 export const [themeClass, vars] = createTheme({
   color: {
@@ -16,3 +16,6 @@ export const exampleStyle = style({
   padding: 10,
 })
 
+globalStyle('html, body', {
+  margin: 0,
+});

@@ -36,7 +36,11 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     nuxt.hook('vite:extendConfig', (config) => {
       config.plugins = config.plugins || []
-      config.plugins.push(vanillaExtractPlugin(options), addDefaultExport())
+      config.plugins.push(vanillaExtractPlugin(options))
+
+      if (nuxt.options.ssr) {
+        config.plugins.push(addDefaultExport())
+      }
     })
 
     // TODO: Remove this if @vanilla-extract/css updated their @emotion/hash version to 0.9.0
