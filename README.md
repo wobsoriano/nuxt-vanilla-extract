@@ -41,6 +41,9 @@ export const exampleStyle = style({
   color: 'white',
   padding: 10
 })
+
+// Required for error "'default' is not exported"
+export default {}
 ```
 
 ```html
