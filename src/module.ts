@@ -31,6 +31,9 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-vanilla-extract',
     configKey: 'vanilla',
+    compatibility: {
+      "nuxt": "^3.0.0-rc.12"
+    }
   },
   defaults: {},
   setup(options, nuxt) {
