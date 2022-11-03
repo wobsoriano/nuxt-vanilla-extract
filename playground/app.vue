@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { exampleStyle, themeClass } from '~/styles.css'
+import { exampleStyle, themeClass } from '~~/styles/styles.css.mjs'
 </script>
 
 <template>
