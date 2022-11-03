@@ -1,6 +1,6 @@
 import { resolve } from 'pathe'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import { addVitePlugin, defineNuxtModule, extendViteConfig } from '@nuxt/kit'
+import { defineNuxtModule } from '@nuxt/kit'
 import type {
   CompileOptions,
   IdentifierOption,
@@ -21,7 +21,7 @@ export default defineNuxtModule<ModuleOptions>({
     // nuxt.options.vite.optimizeDeps.include.push('@emotion/hash')
     nuxt.hook('vite:extendConfig', (config) => {
       config.plugins = config.plugins || []
-      config.plugins.push(vanillaExtractPlugin())
+      config.plugins.push(vanillaExtractPlugin(options))
     })
 
     if (process.env.NODE_ENV === 'production') {
