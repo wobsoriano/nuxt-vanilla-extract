@@ -23,7 +23,9 @@ function addDefaultExport () {
     },
     transform (code, id) {
       const withoutDefaultExport = !code.includes('export default')
-      if (config.command === 'build' && id.includes('.css.ts') && withoutDefaultExport) {
+      const isVanillaExtract = id.includes('.css.ts')
+      const isBuild = config.command === 'build'
+      if (isBuild && isVanillaExtract && withoutDefaultExport) {
         return {
           code: `${code}\nexport default {}`,
           map: null
