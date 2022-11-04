@@ -14,44 +14,52 @@ npm install nuxt-vanilla-extract
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['nuxt-vanilla-extract'],
-  vanilla: {
-    // https://vanilla-extract.style/documentation/setup/#identifiers
-    identifiers: {}
-  }
+  modules: ['nuxt-vanilla-extract']
 })
 ```
 
 ```ts
-// ~/styles.css.ts
-import { createTheme, style } from '@vanilla-extract/css'
+// ~/styles/index.css.ts
+import { style } from '@vanilla-extract/css'
 
-export const [themeClass, vars] = createTheme({
-  color: {
-    brand: 'blue'
-  },
-  font: {
-    body: 'arial'
+export const root = style({
+  background: 'pink',
+  color: 'blue',
+  padding: '16px',
+  transition: 'opacity .1s ease',
+  ':hover': {
+    opacity: 0.8
   }
-})
-
-export const exampleStyle = style({
-  backgroundColor: vars.color.brand,
-  fontFamily: vars.font.body,
-  color: 'white',
-  padding: 10
 })
 ```
 
-```html
+JSX/TSX
+
+```tsx
+import * as styles from '@/styles/index.css'
+
+export default defineComponent({
+  render () {
+    return (
+      <div class={styles.root}>
+        <h1>🧁 Hello from vanilla-extract!</h1>
+      </div>
+    )
+  }
+})
+```
+
+<script setup />
+
+```vue
 <script setup lang="ts">
-import { themeClass, exampleStyle } from '@/styles.css';
+import * as styles from '@/styles/index.css'
 </script>
 
 <template>
-  <section :class="themeClass">
-    <h1 :class="exampleStyle">Hello world!</h1>
-  </section>
+  <div :class="styles.root">
+    <h1>🧁 Hello from vanilla-extract!</h1>
+  </div>
 </template>
 ```
 
