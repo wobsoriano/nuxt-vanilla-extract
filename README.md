@@ -33,7 +33,7 @@ export const root = style({
 })
 ```
 
-JSX/TSX
+with JSX/TSX
 
 ```tsx
 import * as styles from '@/styles/index.css'
@@ -49,7 +49,7 @@ export default defineComponent({
 })
 ```
 
-<script setup />
+with script setup
 
 ```vue
 <script setup lang="ts">
