@@ -3,7 +3,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { defineNuxtModule } from '@nuxt/kit'
 import type {
   CompileOptions,
-  IdentifierOption,
+  IdentifierOption
 } from '@vanilla-extract/integration'
 
 interface ModuleOptions {
@@ -14,14 +14,14 @@ interface ModuleOptions {
 const isProduction = process.env.NODE_ENV === 'production'
 
 // Without this, build will fail
-function addDefaultExport() {
+function addDefaultExport () {
   let config
   return {
     name: 'nuxt-vanilla-extract',
-    configResolved(resolvedConfig) {
+    configResolved (resolvedConfig) {
       config = resolvedConfig
     },
-    transform(code, id) {
+    transform (code, id) {
       if (config.command === 'build' && id.includes('.css.ts') && !code.includes('export default')) {
         return {
           code: `${code}\nexport default {}`,
@@ -37,15 +37,15 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-vanilla-extract',
     configKey: 'vanilla',
     compatibility: {
-      "nuxt": "^3.0.0-rc.12"
+      nuxt: '^3.0.0-rc.12'
     }
   },
   defaults: {},
-  setup(options, nuxt) {
+  setup (options, nuxt) {
     nuxt.hook('vite:extendConfig', (config) => {
       config.plugins = config.plugins || []
       config.plugins.push(vanillaExtractPlugin(options))
-      
+
       if (nuxt.options.ssr && isProduction) {
         config.plugins.push(addDefaultExport())
       }
@@ -55,6 +55,5 @@ export default defineNuxtModule<ModuleOptions>({
     if (process.env.NODE_ENV === 'production' && nuxt.options.ssr) {
       nuxt.options.alias['@emotion/hash'] = resolve('./node_modules/@emotion/hash/dist/emotion-hash.cjs.js')
     }
-  },
+  }
 })
-
