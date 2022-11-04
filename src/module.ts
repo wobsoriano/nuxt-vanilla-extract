@@ -13,7 +13,7 @@ interface ModuleOptions {
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-// Without this, build will fail
+// Need to add default exports to *.css.ts files for SSR builds
 function addDefaultExport () {
   let config
   return {
@@ -22,7 +22,8 @@ function addDefaultExport () {
       config = resolvedConfig
     },
     transform (code, id) {
-      if (config.command === 'build' && id.includes('.css.ts') && !code.includes('export default')) {
+      const withoutDefaultExport = !code.includes('export default')
+      if (config.command === 'build' && id.includes('.css.ts') && withoutDefaultExport) {
         return {
           code: `${code}\nexport default {}`,
           map: null
