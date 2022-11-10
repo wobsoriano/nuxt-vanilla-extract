@@ -22,7 +22,7 @@ function addDefaultExport () {
       config = resolvedConfig
     },
     transform (code, id) {
-      const withoutDefaultExport = !code.includes('export default')
+      const withoutDefaultExport = !code.includes('default')
       const isVanillaExtract = id.includes('.css.ts')
       const isBuild = config.command === 'build'
       if (isBuild && isVanillaExtract && withoutDefaultExport) {
