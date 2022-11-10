@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@emotion/hash": "^0.9.0",
-    "@nuxt/kit": "^3.0.0-rc.12",
+    "@nuxt/kit": "^3.0.0-rc.13",
     "@vanilla-extract/css": "^1.9.1",
     "@vanilla-extract/integration": "^6.0.0",
     "@vanilla-extract/vite-plugin": "^3.6.1",
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.0",
-    "@nuxt/schema": "^3.0.0-rc.12",
+    "@nuxt/schema": "^3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.14.0",
