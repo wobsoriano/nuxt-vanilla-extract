@@ -1,7 +1,7 @@
 {
   "name": "nuxt-vanilla-extract",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Zero-runtime stylesheets in your Nuxt 3 apps.",
   "keywords": [
     "css",
