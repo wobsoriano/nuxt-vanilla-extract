@@ -1,4 +1,4 @@
-import { resolve } from 'pathe'
+import { init, parse } from 'es-module-lexer'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { defineNuxtModule } from '@nuxt/kit'
 import type {
@@ -22,11 +22,15 @@ function addDefaultExport (): Plugin {
     configResolved (resolvedConfig) {
       config = resolvedConfig
     },
-    transform (code, id) {
-      const withoutDefaultExport = !code.includes('default')
-      const isVanillaExtract = id.includes('.css.ts')
+    async transform (code, id) {
+      if (!id.includes('.css.')) {
+        return
+      }
+      await init
+      const [, exports] = parse(code)
+      const withoutDefaultExport = exports.filter(e => e.n === 'default').length === 0
       const isBuild = config.command === 'build'
-      if (isBuild && isVanillaExtract && withoutDefaultExport) {
+      if (isBuild && withoutDefaultExport) {
         return {
           code: `${code}\nexport default {}`,
           map: null
