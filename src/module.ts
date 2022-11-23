@@ -5,6 +5,7 @@ import type {
   CompileOptions,
   IdentifierOption
 } from '@vanilla-extract/integration'
+import type { Plugin } from 'vite'
 
 interface ModuleOptions {
   identifiers?: IdentifierOption
@@ -14,8 +15,8 @@ interface ModuleOptions {
 const isProduction = process.env.NODE_ENV === 'production'
 
 // Need to add default exports to *.css.ts files for SSR builds
-function addDefaultExport () {
-  let config
+function addDefaultExport (): Plugin {
+  let config: any
   return {
     name: 'nuxt-vanilla-extract',
     configResolved (resolvedConfig) {
@@ -53,10 +54,5 @@ export default defineNuxtModule<ModuleOptions>({
         config.plugins.push(addDefaultExport())
       }
     })
-
-    // TODO: Remove this if @vanilla-extract/css updated their @emotion/hash version to 0.9.0
-    if (process.env.NODE_ENV === 'production' && nuxt.options.ssr) {
-      nuxt.options.alias['@emotion/hash'] = resolve('./node_modules/@emotion/hash/dist/emotion-hash.cjs.js')
-    }
   }
 })
