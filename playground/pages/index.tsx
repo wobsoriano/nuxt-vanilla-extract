@@ -4,7 +4,7 @@ export default defineComponent({
   render () {
     return (
       <div class={styles.root}>
-        <h1>🧁 Hello from vanilla-extract!</h1>
+        <h1>🧁 Hello from vanilla-extractss!</h1>
       </div>
     )
   }
